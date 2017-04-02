@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Work\Eclipse_wkspace\CallHelp\app\libs\mail.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="C:\Work\Eclipse_wkspace\CallHelp\app\build\intermediates\pre-dexed\debug\mail_fbe20133b4f8867ae5d843e3a380abd43ccaabb7.jar" />
+    </item>
+    <item
+        jar="C:\Work\Eclipse_wkspace\CallHelp\app\libs\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fafc78681412f85865274d9163d1eab0ef61866d">
+        <dex dex="C:\Work\Eclipse_wkspace\CallHelp\app\build\intermediates\pre-dexed\debug\classes_fd9e860abd28369eea6649cf489e075788ba55c7.jar" />
+    </item>
+    <item
+        jar="C:\Work\Eclipse_wkspace\CallHelp\app\libs\activation.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="C:\Work\Eclipse_wkspace\CallHelp\app\build\intermediates\pre-dexed\debug\activation_bbf207eacd77cce96aa94bfc4ae43a0e169387c0.jar" />
+    </item>
+    <item
+        jar="C:\Work\Eclipse_wkspace\CallHelp\app\libs\additionnal.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="C:\Work\Eclipse_wkspace\CallHelp\app\build\intermediates\pre-dexed\debug\additionnal_b373d6f23344b94814f12b7e47e0797666e00491.jar" />
+    </item>
+    <item
+        jar="C:\AndroidSdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\Work\Eclipse_wkspace\CallHelp\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_aa93a641935b3e75b1313f49d81293a4c8d64414.jar" />
+    </item>
+    <item
+        jar="C:\Users\S\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.2\1f96456ca233dec780aa224bff076d8e8bca3908\gson-2.2.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1f96456ca233dec780aa224bff076d8e8bca3908">
+        <dex dex="C:\Work\Eclipse_wkspace\CallHelp\app\build\intermediates\pre-dexed\debug\gson-2.2.2_39f5811c2b53e7e7c3b1d7f46129f14f6411d116.jar" />
+    </item>
+
+</items>

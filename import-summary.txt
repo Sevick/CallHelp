@@ -1,0 +1,166 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\.name
+* .idea\Call03.iml
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\libraries\
+* .idea\libraries\yandexmapkit_library.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* drawable-hdpi\
+* drawable-hdpi\about.png
+* drawable-hdpi\ambulance.png
+* drawable-hdpi\av_play.png
+* drawable-hdpi\av_stop.png
+* drawable-hdpi\big_widget_icon.png
+* drawable-hdpi\call_off.png
+* drawable-hdpi\call_on.png
+* drawable-hdpi\contacts.png
+* drawable-hdpi\email.png
+* drawable-hdpi\email_off.png
+* drawable-hdpi\email_on.png
+* drawable-hdpi\folders.png
+* drawable-hdpi\gps.png
+* drawable-hdpi\help.png
+* drawable-hdpi\message.png
+* drawable-hdpi\navigation_expand.png
+* drawable-hdpi\smile_icon.png
+* drawable-hdpi\sms_off.png
+* drawable-hdpi\sms_on.png
+* drawable-hdpi\widget_icon.png
+* drawable-ldpi\
+* drawable-ldpi\ambulance.png
+* drawable-ldpi\big_widget_icon.png
+* drawable-ldpi\smile_icon.png
+* drawable-ldpi\widget_icon.png
+* drawable-mdpi\
+* drawable-mdpi\about.png
+* drawable-mdpi\ambulance.png
+* drawable-mdpi\av_play.png
+* drawable-mdpi\av_stop.png
+* drawable-mdpi\big_widget_icon.png
+* drawable-mdpi\contacts.png
+* drawable-mdpi\email.png
+* drawable-mdpi\folders.png
+* drawable-mdpi\gps.png
+* drawable-mdpi\help.png
+* drawable-mdpi\message.png
+* drawable-mdpi\navigation_expand.png
+* drawable-mdpi\smile_icon.png
+* drawable-mdpi\widget_icon.png
+* drawable-xhdpi\
+* drawable-xhdpi\about.png
+* drawable-xhdpi\ambulance.png
+* drawable-xhdpi\av_play.png
+* drawable-xhdpi\av_stop.png
+* drawable-xhdpi\big_widget_icon.png
+* drawable-xhdpi\contacts.png
+* drawable-xhdpi\email.png
+* drawable-xhdpi\folders.png
+* drawable-xhdpi\gps.png
+* drawable-xhdpi\help.png
+* drawable-xhdpi\message.png
+* drawable-xhdpi\navigation_expand.png
+* drawable-xhdpi\widget_icon.png
+* drawable\
+* drawable\borders_shape.xml
+* drawable\contacts_back_text.xml
+* drawable\main_shape.xml
+* drawable\main_shape_no_borders.xml
+* drawable\scrollbar_vertical_thumb.xml
+* drawable\scrollbar_vertical_track.xml
+* layout\
+* layout\address_line.xml
+* layout\address_view.xml
+* layout\addresses.xml
+* layout\big_widgetlayout.xml
+* layout\call_for_help.xml
+* layout\confirmdelete.xml
+* layout\contacts.xml
+* layout\gps.xml
+* layout\list_item_icon_text.xml
+* layout\main.xml
+* layout\no_tts_language.xml
+* layout\progress.xml
+* layout\sms.xml
+* layout\widgetlayout.xml
+* proguard-project.txt
+* values\
+* values\config_caption.xml
+* values\strings.xml
+* xml\
+* xml\bigwidgetproviderinfo.xml
+* xml\widgetproviderinfo.xml
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+gson-2.2.2.jar => com.google.code.gson:gson:2.2.2
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.2.jar => version 2.2.2 in com.google.code.gson:gson:2.2.2
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets
+* libs\activation.jar => app\libs\activation.jar
+* libs\additionnal.jar => app\libs\additionnal.jar
+* libs\android-support-v13.jar => app\libs\android-support-v13.jar
+* libs\armeabi\libcache_local.so => app\src\main\jniLibs\armeabi\libcache_local.so
+* libs\classes.jar => app\libs\classes.jar
+* libs\mail.jar => app\libs\mail.jar
+* libs\yandexmapkit-library.jar => app\libs\yandexmapkit-library.jar
+* lint.xml => app\lint.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

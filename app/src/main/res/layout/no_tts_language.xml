@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#99000000"
+    android:baselineAligned="true"
+    android:orientation="horizontal"
+    android:padding="20dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/main_shape"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/tv01"
+        style="@style/ConfigCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TTSNoLanguage" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/main_shape"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp" >    
+<TextView
+    android:id="@+id/tv02"
+    style="@style/ConfigCaption"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/TTSForExample" />
+        
+<TextView
+    android:id="@+id/textViewTTSLink"
+    style="@style/ConfigCaption"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:text="@string/TTSToDownload" />
+
+</LinearLayout>
+</LinearLayout>
+
+</LinearLayout>

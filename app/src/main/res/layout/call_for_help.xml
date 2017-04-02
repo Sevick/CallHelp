@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#99000000"
+    android:baselineAligned="true"
+    android:orientation="horizontal"
+    android:padding="20dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/main_shape"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp">
+            <TextView android:id="@+id/textLocCaption" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingBottom="10dp" android:text="@string/LocTextCaptionText" android:textAppearance="?android:attr/textAppearanceLarge"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:id="@+id/textLocText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1" android:paddingLeft="15dp" android:text="@string/LocTextDefault" android:textAppearance="?android:attr/textAppearanceLarge"/>
+                <ImageView android:id="@+id/chooseAddress" android:layout_width="70px" android:layout_height="fill_parent" android:src="@drawable/navigation_expand"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="right" android:orientation="horizontal" android:padding="10dp">
+                <TextView android:id="@+id/textLocAccCaption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:paddingRight="10dp" android:text="@string/LocAccCaptionText" android:textAppearance="?android:attr/textAppearanceMedium"/>
+                <TextView android:id="@+id/textLocAccValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="10dp" android:text="---" android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </LinearLayout>
+            
+            <Button android:id="@+id/makeCall" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Вызвать помощь"/>
+            <Button android:id="@+id/cancelHelpRequest" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/CancelCallButtonText"/>
+            <EditText android:id="@+id/txtActionsLog" android:layout_width="fill_parent" android:layout_height="100dp" android:ems="10" android:gravity="top" android:visibility="gone">
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

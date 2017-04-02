@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <FrameLayout
+        android:id="@+id/fragmentSMS"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/MessageTab_SMTPEmailSubject_Caption" />
+
+            <EditText
+                android:id="@+id/editSMTPEmailSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Текст" />
+
+            <EditText
+                android:id="@+id/editTextToSpeech"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:text="" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Аудио-сообщение" />
+
+            <Spinner
+                android:id="@+id/spinVoiceCallType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:entries="@array/VoiceCallOptions" />
+
+            
+                    <LinearLayout
+                        android:id="@+id/layoutAudioFileOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            
+            <CheckBox
+                android:id="@+id/checkAddLocToVoiceMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:text="Добавить местонахождение к аудио-сообщению" />
+
+            <EditText
+                android:id="@+id/editAudioFile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ems="10"
+                android:lines="2"
+                android:singleLine="true"
+                android:text="/sdcard/audio.wav" >
+            </EditText>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="right"
+                android:orientation="horizontal" >
+                
+                <ImageButton
+                    android:id="@+id/btnPlayAudio"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/av_play" />
+
+                <ImageButton
+                    android:id="@+id/btnPickAudio"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/folders" />
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/MessageTab_SMTPSensderEmail_Caption" />
+
+            <EditText
+                android:id="@+id/editSMTPSenderEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MessageTab_SMTPServer_Caption" />
+
+            <EditText
+                android:id="@+id/editSMTPServer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ems="10"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MessageTab_SMTPUsername_Caption" />
+
+            <EditText
+                android:id="@+id/editSMTPUsername"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ems="10"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/ConfigCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MessageTab_SMTPPassword_Caption" />
+
+            <EditText
+                android:id="@+id/editSMTPPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+
+            <CheckBox
+                android:id="@+id/checkSMTPUseSSL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MessageTab_SMTPUseSSL" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
