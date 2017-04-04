@@ -20,31 +20,32 @@
         style="@style/ConfigCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Минимальная точность определения местоположения" />
+        android:text="@string/GPSTab_TxtMinAccur" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:padding="15dp" >
+        android:padding="15dp">
 
         <Spinner
             android:id="@+id/spinMinAccuracy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/Location_Accuracy"/>
+            android:entries="@array/Location_Accuracy" />
+
         <TextView
             android:id="@+id/textView2"
             style="@style/ConfigCaption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Таймаут" />
+            android:text="@string/GPSTab_TxtTimeOut" />
 
         <Spinner
             android:id="@+id/spinMapProvider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:entries="@array/LocAccTimeouts"/>
+            android:layout_height="wrap_content"
+            android:entries="@array/LocAccTimeouts" />
 
         <CheckBox
             android:id="@+id/checkDownloadAGPS"
@@ -53,6 +54,22 @@
             android:checked="true"
             android:enabled="false"
             android:text="@string/GPSTab_DownloadAGPSCheckbox_Caption" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/ConfigCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/GPSTab_TxtLanguage" />
+
+        <Spinner
+            android:id="@+id/spinLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Languages" />
+
+
 
     </LinearLayout>
 

@@ -6,15 +6,19 @@
     android:padding="15dp" 
     android:background="@drawable/main_shape"
      >
-
+
+
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Удалить"
+        android:text="@string/ConfirmDeleteText"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -23,15 +27,20 @@
         android:background="@drawable/borders_shape"
         android:text="+7-499-0000000"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
+
+
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="из списка?"
+        android:text="@string/ConfirmDeleteFromList"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,14 +51,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Да" />
+            android:text="@string/ConfirmDeleteBtnYes" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Нет" />
+            android:text="@string/ConfirmDeleteBtnNo" />
     </LinearLayout>
      
 </LinearLayout>    

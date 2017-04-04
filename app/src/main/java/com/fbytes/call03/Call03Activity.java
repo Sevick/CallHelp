@@ -1,43 +1,36 @@
 package com.fbytes.call03;
 
-import java.util.ArrayList;
-import java.util.Set;
-
-import android.app.Activity;
-import android.app.TabActivity;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.provider.Contacts.Phones;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+
 import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 public class Call03Activity extends FragmentActivity{
 	//extends TabActivity {
+
+	public static final List<String> APP_LANGUAGES = Arrays.asList(new String[]{"en", "ru"});
 
 	private static String TAG="Call03Activity";
 	public static final String CONFIG_NAME = "Call03Config";
@@ -64,6 +57,7 @@ public class Call03Activity extends FragmentActivity{
 		
 		ContactsCL.SaveConfig();
 		SMS.SaveConfig();
+
 		GPS.SaveConfig();
 		configEditor.commit();
 		
@@ -120,6 +114,25 @@ public class Call03Activity extends FragmentActivity{
 		ComponentName thisWidget = new ComponentName(getApplicationContext(), Call03WidgetProvider.class);
 		int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
 		Log.d(TAG,"Widgets installed: "+allWidgetIds.length);
+
+
+
+		String actLang = config.getString("Language", "");
+		String sysLang = Locale.getDefault().getLanguage();
+		if (actLang == null || actLang.equals("")){
+			configEditor.putString("Language", sysLang);
+		}
+
+		Resources res = getResources();
+		DisplayMetrics dm = res.getDisplayMetrics();
+		android.content.res.Configuration conf = res.getConfiguration();
+		if (!actLang.equals(conf.locale.getLanguage())) {
+			conf.locale = new Locale(actLang);
+			res.updateConfiguration(conf, dm);
+			Intent refresh = new Intent(this, Call03Activity.class);
+			startActivity(refresh);
+			finish();
+		}
 	}
 
 
