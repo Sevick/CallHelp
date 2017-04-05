@@ -3,15 +3,12 @@ package com.fbytes.call03;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,16 +20,11 @@ import android.widget.TabWidget;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
 
 public class Call03Activity extends FragmentActivity{
 	//extends TabActivity {
 
-	public static final List<String> APP_LANGUAGES = Arrays.asList(new String[]{"en", "ru"});
-
-	private static String TAG="Call03Activity";
+    private static String TAG="Call03Activity";
 	public static final String CONFIG_NAME = "Call03Config";
 	public static SharedPreferences config;
 	public static SharedPreferences.Editor configEditor;
@@ -117,22 +109,6 @@ public class Call03Activity extends FragmentActivity{
 
 
 
-		String actLang = config.getString("Language", "");
-		String sysLang = Locale.getDefault().getLanguage();
-		if (actLang == null || actLang.equals("")){
-			configEditor.putString("Language", sysLang);
-		}
-
-		Resources res = getResources();
-		DisplayMetrics dm = res.getDisplayMetrics();
-		android.content.res.Configuration conf = res.getConfiguration();
-		if (!actLang.equals(conf.locale.getLanguage())) {
-			conf.locale = new Locale(actLang);
-			res.updateConfiguration(conf, dm);
-			Intent refresh = new Intent(this, Call03Activity.class);
-			startActivity(refresh);
-			finish();
-		}
 	}
 
 

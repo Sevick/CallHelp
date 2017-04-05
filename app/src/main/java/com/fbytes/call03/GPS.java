@@ -1,14 +1,8 @@
 package com.fbytes.call03;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -101,7 +95,7 @@ public class GPS extends FragmentActivity {
             actualLang = Call03Activity.config.getString("Language", "");
             Log.d("FISH", "   ***   GPS onCrView actualLang = " + actualLang);
             Log.d("FISH", "   ***   GPS onCrView actualLang # = " + spinnerLanguageAdapter.getPosition(actualLang));
-            spinnerLanguage.setSelection(Call03Activity.APP_LANGUAGES.indexOf( actualLang));
+            spinnerLanguage.setSelection(AppStartSetLang.APP_LANGUAGES.indexOf( actualLang));
             spinnerLanguage.setOnItemSelectedListener(LanguageChange);
 
 
@@ -168,7 +162,7 @@ public class GPS extends FragmentActivity {
         @Override
         public void onItemSelected(AdapterView<?> arg0, View arg1, int pPosition, long arg3) {
 
-            String lang = Call03Activity.APP_LANGUAGES.get(pPosition);
+            String lang = AppStartSetLang.APP_LANGUAGES.get(pPosition);
             Log.d("FISH", "  ***  ***  *** GPS lang = " + lang + "   pos = " + pPosition);
             Log.d("FISH", "  ***  ***  *** GPS acttualLang = " + actualLang);
 
@@ -176,7 +170,7 @@ public class GPS extends FragmentActivity {
 
                 Call03Activity.configEditor.putString("Language", lang);
                 Call03Activity.configEditor.commit();
-                setLocale(arg1.getContext(), lang);
+                AppStartSetLang.setLocale(arg1.getContext(), lang);
                 Log.d("FISH", "  ***  ***  *** GPS in Listener lang 2 SharPr " + lang);
             }
         }
@@ -194,7 +188,7 @@ public class GPS extends FragmentActivity {
             Call03Activity.configEditor.putString("LocMinAccuracy", spinnerLocMinAccuracy.getSelectedItem().toString());
             Call03Activity.configEditor.putString("LocMapProvider", spinnerLocMapProvider.getSelectedItem().toString());
 
-            Call03Activity.configEditor.putString("Language", Call03Activity.APP_LANGUAGES.get(spinnerLanguage.getSelectedItemPosition()));
+            Call03Activity.configEditor.putString("Language", AppStartSetLang.APP_LANGUAGES.get(spinnerLanguage.getSelectedItemPosition()));
 
             Call03Activity.configEditor.putBoolean("DownloadAGPS", downloadAGPS.isChecked());
             Call03Activity.configEditor.commit();
@@ -215,17 +209,4 @@ public class GPS extends FragmentActivity {
 //		updateTexts();
     }
 
-    public static void setLocale(Context context, String lang) {
-        Locale myLocale = new Locale(lang);
-        Log.d("FISH", "  ***  ***  *** SetLocale " + lang);
-
-        Resources res = context.getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration conf = res.getConfiguration();
-        conf.locale = myLocale;
-        res.updateConfiguration(conf, dm);
-        Intent refresh = new Intent(context, Call03Activity.class);
-        context.startActivity(refresh);
-        ((Activity) context).finish();
-    }
 }
