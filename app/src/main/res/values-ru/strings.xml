@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Call03Activity!</string>
+    <string name="app_name">03 - вызов скорой</string>
+    
+<string name="defaultEmergencyNumber">112</string>
+<string name="defaultMessageText">Мне нужна помощь, говорить не могу. Пожалуйста, вызовите скорую. Я нахожусь на @loc. Координаты - @coord</string>
+
+<string name="EmergencyWidgetCaption">Вызов скорой</string>
+
+<string name="not_support_gps">Не подключен GPS</string>
+<string name="not_support_network">Нет подключения к сети</string>
+<string name="GeoCodingLang">ru</string>
+<string name="GeoCodingLangCountry">RU</string>
+
+<string name="Tabs_Contacts">Контакты</string>
+<string name="Tabs_Message">Сообщение</string>
+<string name="Tabs_GPS">Email</string>
+
+
+<string name="CallHelp_WindowAddressesCaption">Ближайшие адреса</string>
+<string name="CallingForHelpCaptionText">Вызываем помощь</string>
+<string name="LocTextDefault">идет определение местоположения...</string>
+<string name="LocAccCaptionText">Точность:</string>
+<string name="LocTextCaptionText">Я нахожусь:</string>
+<string name="CancelCallButtonText">Отменить вызов</string>
+
+<string name="Call4Help_Actions_VoiceCall">Calling</string>
+
+<string name="Widget_SmallWidgetName">Вызов скорой\n1*1</string>
+<string name="Widget_BigWidgetName">Вызов скорой\n4*2</string>
+
+
+<string name="MessageTab_SMTPServer_Caption">SMTP-сервер</string>
+<string name="MessageTab_SMTPUsername_Caption">Имя пользователя</string>
+<string name="MessageTab_SMTPPassword_Caption">Пароль</string>
+<string name="MessageTab_SMTPSensderEmail_Caption">Отправлять с адреса</string>
+<string name="MessageTab_SMTPEmailSubject_Caption">Заголовок письма</string>
+<string name="MessageTab_SMTPEmailSubject_DefaultText">Мне нужна помощ! Пожалуйста, вызовете скорую!</string>
+<string name="MessageTab_SMTPUseSSL">Использовать ssl</string>
+
+<string name="TTSNoLanguage">Не установлена поддержка синтеза речи для языка сообщения - для прочтения русских тектов необходимо дополнительно устновить языковой модуль сторонних разработчиков</string>
+<string name="TTSForExample">Например:</string>
+<string name="TTSToDownload">SVOX</string>
+
+
+
+<string name="GPSTab_DownloadAGPSCheckbox_Caption">Загружать данные AGPS</string>
+
+<string-array name="VoiceCallOptions">
+        <item>Использовать синтез речи</item>
+        <item>Аудио-файл</item>
+</string-array>
+
+
+<string-array name="Location_Accuracy">
+        <item>3 метров</item>
+        <item>10 метров</item>
+        <item>30 метров (default)</item>
+        <item>50 метров</item>
+        <item>100 метров</item>
+</string-array>
+
+
+<string-array name="LocAccTimeouts">
+        <item>30 sec</item>    
+        <item>1 min</item>
+        <item>2 min</item>
+        <item>5 min</item>
+</string-array>
+
+<string-array name="TestArray">
+        <item>идет определение местоположения</item>    
+</string-array>
+    <string name="GPSTab_SpinItem_English">Английский</string>
+    <string name="GPSTab_SpinItem_Russian">Русский</string>
+    <string name="ConfirmDeleteBtnNo">Нет</string>
+    <string name="ConfirmDeleteBtnYes">Да</string>
+    <string name="ConfirmDeleteFromList">из списка?</string>
+    <string name="ConfirmDeleteText">Удалить</string>
+    <string name="MakeCallButtonText">Вызвать помощь</string>
+    <string name="MessageTab_ChBox_AddLocation">Добавить местонахождение к аудио-сообщению</string>
+    <string name="GPSTab_TxtMinAccur">Минимальная точность определения местоположения</string>
+    <string name="ContactsTouchMsg">Коснитесь для добавления котнактов</string>
+    <string name="GPSTab_TxtLanguage">Выбрать язык</string>
+    <string name="GPSTab_TxtTimeOut">Таймаут</string>
+    <string name="MAIN_Btn_Cancel">Отменить</string>
+    <string name="MAIN_Btn_Save">Сохранить</string>
+    <string name="MessageTab_Audio">Аудио</string>
+    <string name="MessageTab_Text">Текст сообщения</string>
+
+</resources>
