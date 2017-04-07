@@ -3,91 +3,100 @@
 
     <string name="hello">Hello World, Call03Activity!</string>
     <string name="app_name">03 - ambulance</string>
-    
-<string name="defaultEmergencyNumber">112</string>
-<string name="defaultMessageText">I need help, I can not speak. Please call an ambulance. I am on @loc. Coordinates - @coord</string>
 
-<string name="EmergencyWidgetCaption">Emergency call</string>
+    <string name="defaultEmergencyNumber">112</string>
+    <string name="defaultMessageText">I need help, I can not speak. Please call an ambulance. I am on @loc. Coordinates - @coord</string>
 
-<string name="not_support_gps">GPS provider not supported</string> 
-<string name="not_support_network">Network provider not supported</string> 
-<string name="GeoCodingLang">en</string>
-<string name="GeoCodingLangCountry">EN</string>
+    <string name="EmergencyWidgetCaption">Emergency call</string>
 
-<string name="Tabs_Contacts">Contacts</string>
-<string name="Tabs_Message">Message</string>
-<string name="Tabs_GPS">Email</string>
+    <string name="not_support_gps">GPS provider not supported</string>
+    <string name="not_support_network">Network provider not supported</string>
+    <string name="GeoCodingLang">en</string>
+    <string name="GeoCodingLangCountry">EN</string>
 
-
-<string name="CallHelp_WindowAddressesCaption">Nearby addresses</string>
-<string name="CallingForHelpCaptionText">Call for help</string>
-<string name="LocTextDefault">Locating...</string>
-<string name="LocAccCaptionText">Accuracy:</string>
-<string name="LocTextCaptionText">My location:</string>
-<string name="CancelCallButtonText">Cancel call</string>
-
-<string name="Call4Help_Actions_VoiceCall">Calling</string>
-
-<string name="Widget_SmallWidgetName">Emergency call\n1*1</string>
-<string name="Widget_BigWidgetName">Emergency call\n4*2</string>
+    <string name="Tabs_Contacts">Contacts</string>
+    <string name="Tabs_Message">Message</string>
+    <string name="Tabs_GPS">Email</string>
 
 
-<string name="MessageTab_SMTPServer_Caption">SMTP-server</string>
-<string name="MessageTab_SMTPUsername_Caption">User name</string>
-<string name="MessageTab_SMTPPassword_Caption">Password</string>
-<string name="MessageTab_SMTPSensderEmail_Caption">Send from e-mail</string>
-<string name="MessageTab_SMTPEmailSubject_Caption">Letter title</string>
-<string name="MessageTab_SMTPEmailSubject_DefaultText">I need your help. Please, call emergency</string>
-<string name="MessageTab_SMTPUseSSL">Use ssl</string>
+    <string name="CallHelp_WindowAddressesCaption">Nearby addresses</string>
+    <string name="CallingForHelpCaptionText">Call for help</string>
+    <string name="LocTextDefault">Locating...</string>
+    <string name="LocAccCaptionText">Accuracy:</string>
+    <string name="LocTextCaptionText">My location:</string>
+    <string name="CancelCallButtonText">Cancel call</string>
 
-<string name="TTSNoLanguage">There is no support for speech synthesis for the language of the message - you must additionally install the third-party language module</string>
-<string name="TTSForExample">For example:</string>
-<string name="TTSToDownload">SVOX</string>
+    <string name="Call4Help_Actions_VoiceCall">Calling</string>
 
-
-
-<string name="GPSTab_DownloadAGPSCheckbox_Caption">Use AGPS</string>
-
-<string-array name="VoiceCallOptions">
-        <item>Использовать синтез речи</item>
-        <item>Аудио-файл</item>
-</string-array>
+    <string name="Widget_SmallWidgetName">Emergency call\n1*1</string>
+    <string name="Widget_BigWidgetName">Emergency call\n4*2</string>
 
 
-<string-array name="Location_Accuracy">
-        <item>3 метров</item>
-        <item>10 метров</item>
-        <item>30 метров (default)</item>
-        <item>50 метров</item>
-        <item>100 метров</item>
-</string-array>
+    <string name="MessageTab_SMTPServer_Caption">SMTP-server</string>
+    <string name="MessageTab_SMTPUsername_Caption">User name</string>
+    <string name="MessageTab_SMTPPassword_Caption">Password</string>
+    <string name="MessageTab_SMTPSensderEmail_Caption">Send from e-mail</string>
+    <string name="MessageTab_SMTPEmailSubject_Caption">Letter title</string>
+    <string name="MessageTab_SMTPEmailSubject_DefaultText">I need your help. Please, call emergency</string>
+    <string name="MessageTab_SMTPUseSSL">Use ssl</string>
+
+    <string name="TTSNoLanguage">There is no support for speech synthesis for the language of the message - you must additionally install the third-party language module</string>
+    <string name="TTSForExample">For example:</string>
+    <string name="TTSToDownload">SVOX</string>
 
 
-<string-array name="LocAccTimeouts">
-        <item>30 sec</item>    
+    <string name="GPSTab_DownloadAGPSCheckbox_Caption">Use AGPS</string>
+
+    <string-array name="VoiceCallOptions">
+        <item>@string/VoiceCallItem_Synthesis</item>
+        <item>@string/VoiceCallItem_File</item>
+    </string-array>
+
+    <string name="VoiceCallItem_File">"Audio-file "</string>
+    <string name="VoiceCallItem_Synthesis">Use speech synthesis</string>
+
+
+    <string-array name="Location_Accuracy">
+        <item>@string/Location_AccuracyItem_3</item>
+        <item>@string/Location_AccuracyItem_10</item>
+        <item>@string/Location_AccuracyItem_30</item>
+        <item>@string/Location_AccuracyItem_50</item>
+        <item>@string/Location_AccuracyItem_100</item>
+    </string-array>
+
+    <string name="Location_AccuracyItem_3">3 meter</string>
+    <string name="Location_AccuracyItem_10">10 meter</string>
+    <string name="Location_AccuracyItem_30">30 meter(реккоменд.)</string>
+    <string name="Location_AccuracyItem_50">50 meter</string>
+    <string name="Location_AccuracyItem_100">100 meter</string>
+
+
+    <string-array name="LocAccTimeouts">
+        <item>30 sec</item>
         <item>1 min</item>
         <item>2 min</item>
         <item>5 min</item>
-</string-array>
+    </string-array>
 
-<string-array name="TestArray">
-        <item>идет определение местоположения</item>    
-</string-array>
-        <string name="GPSTab_SpinItem_English">English</string>
-        <string name="GPSTab_SpinItem_Russian">Russian</string>
-        <string name="ConfirmDeleteBtnNo">No</string>
-        <string name="ConfirmDeleteBtnYes">Yes</string>
-        <string name="ConfirmDeleteFromList">From the List?</string>
-        <string name="ConfirmDeleteText">Delete</string>
-        <string name="MakeCallButtonText">Call for Help</string>
-        <string name="ContactsTouchMsg">Touch for add contacts...</string>
-        <string name="GPSTab_TxtLanguage">Choose Language</string>
-        <string name="GPSTab_TxtMinAccur">Minimal accuracy toget location</string>
-        <string name="GPSTab_TxtTimeOut">TimeOut</string>
-        <string name="MAIN_Btn_Cancel">Cancel</string>
-        <string name="MAIN_Btn_Save">Save</string>
-        <string name="MessageTab_Audio">Audio</string>
-        <string name="MessageTab_ChBox_AddLocation">Add your location to AudioMessage</string>
-        <string name="MessageTab_Text">Message Text</string>
+    <string-array name="TestArray">
+        <item>идет определение местоположения</item>
+    </string-array>
+    <string name="GPSTab_SpinItem_English">English</string>
+    <string name="GPSTab_SpinItem_Russian">Russian</string>
+    <string name="ConfirmDeleteBtnNo">No</string>
+    <string name="ConfirmDeleteBtnYes">Yes</string>
+    <string name="ConfirmDeleteFromList">From the List?</string>
+    <string name="ConfirmDeleteText">Delete</string>
+    <string name="MakeCallButtonText">Call for Help</string>
+    <string name="ContactsTouchMsg">Touch for add contacts...</string>
+    <string name="GPSTab_TxtLanguage">Choose Language</string>
+    <string name="GPSTab_TxtMinAccur">Minimal accuracy toget location</string>
+    <string name="GPSTab_TxtTimeOut">TimeOut</string>
+    <string name="MAIN_Btn_Cancel">Cancel</string>
+    <string name="MAIN_Btn_Save">Save</string>
+    <string name="MessageTab_Audio">Audio</string>
+    <string name="MessageTab_ChBox_AddLocation">Add your location to AudioMessage</string>
+    <string name="MessageTab_Text">Message Text</string>
+
 
 </resources>

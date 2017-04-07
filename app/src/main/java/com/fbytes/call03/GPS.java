@@ -3,7 +3,6 @@ package com.fbytes.call03;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,31 +73,17 @@ public class GPS extends FragmentActivity {
                 }
             });
 
-
             spinnerLocMapProvider = (Spinner) v.findViewById(R.id.spinMapProvider);
             spinnerLocMapProviderAdapter = (ArrayAdapter) spinnerLocMapProvider.getAdapter();
             String LocMapProviderStr = Call03Activity.config.getString("LocMapProvider", "");
             spinnerLocMapProvider.setSelection(spinnerLocMapProviderAdapter.getPosition(LocMapProviderStr));
             spinnerLocMapProvider.setOnItemSelectedListener(ProviderChange);
 
-
             spinnerLanguage = (Spinner) v.findViewById(R.id.spinLanguage);
             spinnerLanguageAdapter = (ArrayAdapter) spinnerLanguage.getAdapter();
-
-            Log.d("FISH", "  *** ru-ru position - " + String.valueOf(spinnerLanguageAdapter.getPosition("Русский")));
-            Log.d("FISH", "  *** ru-en position - " + String.valueOf(spinnerLanguageAdapter.getPosition("Английский")));
-            Log.d("FISH", "  *** en-ru position - " + String.valueOf(spinnerLanguageAdapter.getPosition("Russian")));
-            Log.d("FISH", "  *** en-en position - " + String.valueOf(spinnerLanguageAdapter.getPosition("English")));
-//            Log.d("FISH", "  *** " + spinnerLanguageAdapter.);
-
-
             actualLang = Call03Activity.config.getString("Language", "");
-            Log.d("FISH", "   ***   GPS onCrView actualLang = " + actualLang);
-            Log.d("FISH", "   ***   GPS onCrView actualLang # = " + spinnerLanguageAdapter.getPosition(actualLang));
             spinnerLanguage.setSelection(AppStartSetLang.APP_LANGUAGES.indexOf( actualLang));
             spinnerLanguage.setOnItemSelectedListener(LanguageChange);
-
-
 
             return v;
         }
@@ -116,8 +101,6 @@ public class GPS extends FragmentActivity {
         //setContentView(R.layout.gps);
         ViewCreated = false;
     }
-
-    ;
 
     public static OnItemSelectedListener AccuracyChange = new OnItemSelectedListener() {
 
@@ -163,15 +146,11 @@ public class GPS extends FragmentActivity {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int pPosition, long arg3) {
 
             String lang = AppStartSetLang.APP_LANGUAGES.get(pPosition);
-            Log.d("FISH", "  ***  ***  *** GPS lang = " + lang + "   pos = " + pPosition);
-            Log.d("FISH", "  ***  ***  *** GPS acttualLang = " + actualLang);
-
             if (!actualLang.equals(lang)) {
 
                 Call03Activity.configEditor.putString("Language", lang);
                 Call03Activity.configEditor.commit();
                 AppStartSetLang.setLocale(arg1.getContext(), lang);
-                Log.d("FISH", "  ***  ***  *** GPS in Listener lang 2 SharPr " + lang);
             }
         }
 
