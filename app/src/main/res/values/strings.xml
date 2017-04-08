@@ -49,9 +49,12 @@
     <string name="GPSTab_TxtLanguage">Choose Language</string>
 
     <string-array name="VoiceCallOptions">
-        <item>Использовать синтез речи</item>
-        <item>Аудио-файл</item>
+        <item>@string/VoiceCallItem_Synthesis</item>
+        <item>@string/VoiceCallItem_File</item>
     </string-array>
+
+    <string name="VoiceCallItem_Synthesis">Use speech synthesis</string>
+    <string name="VoiceCallItem_File">Audio-file </string>
 
     <string-array name="Location_Accuracy">
         <item>3 метров</item>
