@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, Call03Activity!</string>
     <string name="app_name">03 - вызов скорой</string>
 
     <string name="defaultEmergencyNumber">112</string>
@@ -16,7 +15,7 @@
 
     <string name="Tabs_Contacts">Контакты</string>
     <string name="Tabs_Message">Сообщение</string>
-    <string name="Tabs_GPS">Email</string>
+    <string name="Tabs_Settings">Настройки</string>
 
 
     <string name="CallHelp_WindowAddressesCaption">Ближайшие адреса</string>

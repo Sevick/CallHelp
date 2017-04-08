@@ -93,13 +93,13 @@ public class Call03Activity extends FragmentActivity{
 
 		mTabsAdapter = new TabsAdapter(this, tabHost, mViewPager);
 
-		mTabsAdapter.addTab(tabHost.newTabSpec("tab1").setIndicator(getResources().getString(R.string.Tabs_Contacts),getResources().getDrawable(R.drawable.contacts)),
+		mTabsAdapter.addTab(tabHost.newTabSpec("tab1").setIndicator(getResources().getString(R.string.Tabs_Contacts),getResources().getDrawable(R.drawable.ic_group)),
 				ContactsCL.ContactsFragment.class, null);
 		
-		mTabsAdapter.addTab(tabHost.newTabSpec("tab2").setIndicator(getResources().getString(R.string.Tabs_Message),getResources().getDrawable(R.drawable.message)),
+		mTabsAdapter.addTab(tabHost.newTabSpec("tab2").setIndicator(getResources().getString(R.string.Tabs_Message),getResources().getDrawable(R.drawable.ic_message)),
 				SMS.SMSFragment.class, null);
 		
-		mTabsAdapter.addTab(tabHost.newTabSpec("tab3").setIndicator(getResources().getString(R.string.Tabs_GPS),getResources().getDrawable(R.drawable.email)),
+		mTabsAdapter.addTab(tabHost.newTabSpec("tab3").setIndicator(getResources().getString(R.string.Tabs_Settings),getResources().getDrawable(R.drawable.ic_settings)),
 				GPS.GPSFragment.class, null);
 
 		AppWidgetManager appWidgetManager= AppWidgetManager.getInstance(getApplicationContext());
