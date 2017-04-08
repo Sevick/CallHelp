@@ -44,6 +44,9 @@
     <string name="TTSForExample">Например:</string>
     <string name="TTSToDownload">SVOX</string>
 
+    <string name="USRMSG_ContactHasNoEmail">У этого контакта не определен email.</string>
+    <string name="USRMSG_ContactHasNoPhone">У этого контакта не определен телефон.</string>
+
 
     <string name="GPSTab_DownloadAGPSCheckbox_Caption">Загружать данные AGPS</string>
 
@@ -68,7 +71,6 @@
     <string name="Location_AccuracyItem_30">30 метра(реккоменд.)</string>
     <string name="Location_AccuracyItem_50">50 метра</string>
     <string name="Location_AccuracyItem_100">100 метра</string>
-
 
 
     <string-array name="LocAccTimeouts">

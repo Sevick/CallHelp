@@ -44,6 +44,9 @@
     <string name="TTSForExample">For example:</string>
     <string name="TTSToDownload">SVOX</string>
 
+    <string name="USRMSG_ContactHasNoEmail">This contact has no email.</string>
+    <string name="USRMSG_ContactHasNoPhone">This contact has no phone number.</string>
+
 
     <string name="GPSTab_DownloadAGPSCheckbox_Caption">Use AGPS</string>
 

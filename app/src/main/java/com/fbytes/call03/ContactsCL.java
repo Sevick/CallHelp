@@ -4,9 +4,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,9 +19,6 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.PhoneLookup;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.ListFragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,8 +31,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -296,13 +293,13 @@ public class ContactsCL extends FragmentActivity  {
 				holder.icon3.setImageBitmap(thisItem.getOption(2) ? IconsOn[2] : IconsOff[2]);
 
 				holder.icon1.setTag(thisItem);
-				holder.icon1.setOnClickListener(icon1ClickListener);			
+				holder.icon1.setOnClickListener(onPhoneIconClickListener);
 
 				holder.icon2.setTag(thisItem);
-				holder.icon2.setOnClickListener(icon2ClickListener);	
+				holder.icon2.setOnClickListener(onSmsIconClickListener);
 
 				holder.icon3.setTag(thisItem);
-				holder.icon3.setOnClickListener(icon3ClickListener);				
+				holder.icon3.setOnClickListener(onEmailIconClickListener);
 
 				return convertView;
 			}
@@ -317,51 +314,79 @@ public class ContactsCL extends FragmentActivity  {
 				ImageView icon3;
 			}
 
-			OnClickListener icon1ClickListener=new OnClickListener(){
+			OnClickListener onPhoneIconClickListener =new OnClickListener(){
 				@Override
 				public void onClick(View v) {
 					ContactRec tThisRec=(ContactRec) v.getTag();
-					if (tThisRec.getOption(0)){
-						tThisRec.setOption(0,false);
+
+					if (tThisRec.getPhone()==null || tThisRec.getPhone().equals("")){
+						Context context = v.getContext();
+						Resources res = context.getResources();
+						String text = res.getString(R.string.USRMSG_ContactHasNoPhone);
+						int duration = Toast.LENGTH_SHORT;
+						Toast toast = Toast.makeText(context, text, duration);
+						toast.show();
 					}
-					else{
-						tThisRec.setOption(0,true);				 
+					else {
+						if (tThisRec.getOption(0)) {
+							tThisRec.setOption(0, false);
+						} else {
+							tThisRec.setOption(0, true);
+						}
+						PhonesToSMSListView.invalidateViews();
+						//Call03Activity.OnChanges();
+						SaveConfig();
 					}
-					PhonesToSMSListView.invalidateViews();
-					//Call03Activity.OnChanges();
-					SaveConfig();
 				}
 			};	
 
-			OnClickListener icon2ClickListener=new OnClickListener(){
+			OnClickListener onSmsIconClickListener =new OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					ContactRec tThisRec=(ContactRec) v.getTag();
-					if (tThisRec.getOption(1)){
-						tThisRec.setOption(1,false);
+					ContactRec tThisRec = (ContactRec) v.getTag();
+					if (tThisRec.getPhone()==null || tThisRec.getPhone().equals("")){
+						Context context = v.getContext();
+						Resources res = context.getResources();
+						String text = res.getString(R.string.USRMSG_ContactHasNoPhone);
+						int duration = Toast.LENGTH_SHORT;
+						Toast toast = Toast.makeText(context, text, duration);
+						toast.show();
 					}
-					else{
-						tThisRec.setOption(1,true);				 
+					else {
+						if (tThisRec.getOption(1)) {
+							tThisRec.setOption(1, false);
+						} else {
+							tThisRec.setOption(1, true);
+						}
+						PhonesToSMSListView.invalidateViews();
+						//Call03Activity.OnChanges();
+						SaveConfig();
 					}
-					PhonesToSMSListView.invalidateViews();
-					//Call03Activity.OnChanges();
-					SaveConfig();
 				}
 			};
 
-			OnClickListener icon3ClickListener=new OnClickListener(){
+			OnClickListener onEmailIconClickListener =new OnClickListener(){
 				@Override
 				public void onClick(View v) {
 					ContactRec tThisRec=(ContactRec) v.getTag();
-					if (tThisRec.getOption(2)){
-						tThisRec.setOption(2,false);
+					if (tThisRec.getEmail()==null || tThisRec.getEmail().equals("")){
+						Context context = v.getContext();
+						Resources res = context.getResources();
+						String text = res.getString(R.string.USRMSG_ContactHasNoEmail);
+						int duration = Toast.LENGTH_SHORT;
+						Toast toast = Toast.makeText(context, text, duration);
+						toast.show();
 					}
-					else{
-						tThisRec.setOption(2,true);				 
+					else {
+						if (tThisRec.getOption(2)) {
+							tThisRec.setOption(2, false);
+						} else {
+							tThisRec.setOption(2, true);
+						}
+						PhonesToSMSListView.invalidateViews();
+						//Call03Activity.OnChanges();
+						SaveConfig();
 					}
-					PhonesToSMSListView.invalidateViews();
-					//Call03Activity.OnChanges();
-					SaveConfig();
 				}
 			};
 		}
