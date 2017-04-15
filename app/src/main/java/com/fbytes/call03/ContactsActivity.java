@@ -38,9 +38,9 @@ import com.google.gson.reflect.TypeToken;
 
 
 
-public class ContactsCL extends FragmentActivity  {
+public class ContactsActivity extends FragmentActivity  {
 
-	private static String TAG="ContactsCL";
+	private static String TAG="ContactsActivity";
 	private static ListView PhonesToSMSListView;
 	private static TextView UnderlayingView;
 	private static LinearLayout ContactsLayout;
@@ -70,17 +70,17 @@ public class ContactsCL extends FragmentActivity  {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			ContactsCL.v = inflater.inflate(R.layout.contacts, container, false);
+			ContactsActivity.v = inflater.inflate(R.layout.contacts, container, false);
 
-			ContactsCL.PhonesToSMSListView = (ListView) ContactsCL.v.findViewById(R.id.listContacts);
-			ContactsCL.PhonesToSMSListView.setClickable(true);
+			ContactsActivity.PhonesToSMSListView = (ListView) ContactsActivity.v.findViewById(R.id.listContacts);
+			ContactsActivity.PhonesToSMSListView.setClickable(true);
 
-			ContactsLayout = (LinearLayout) ContactsCL.v.findViewById(R.id.layoutContacts);
-			ProgressLayout = (LinearLayout) ContactsCL.v.findViewById(R.id.progressLayout);
+			ContactsLayout = (LinearLayout) ContactsActivity.v.findViewById(R.id.layoutContacts);
+			ProgressLayout = (LinearLayout) ContactsActivity.v.findViewById(R.id.progressLayout);
 
 
-			ContactsCL.UnderlayingView=(TextView) ContactsCL.v.findViewById(R.id.textUnderContacts);
-			ContactsCL.UnderlayingView.setOnClickListener(new OnClickListener(){
+			ContactsActivity.UnderlayingView=(TextView) ContactsActivity.v.findViewById(R.id.textUnderContacts);
+			ContactsActivity.UnderlayingView.setOnClickListener(new OnClickListener(){
 				@Override
 				public void onClick(View v) {			
 					GetNewContact();  
@@ -90,26 +90,26 @@ public class ContactsCL extends FragmentActivity  {
 
 
 			PhonesInConfig=Call03Activity.config.getString("PhoneToSMS","");
-			Log.d(TAG,"Phones in config="+ContactsCL.PhonesInConfig);           
+			Log.d(TAG,"Phones in config="+ ContactsActivity.PhonesInConfig);
 
-			if (!ContactsCL.PhonesInConfig.equals("")){
-				ContactsCL.PhonesToSMS=Call03Activity.gsonCompact.fromJson(PhonesInConfig, PhonesListType);        	
+			if (!ContactsActivity.PhonesInConfig.equals("")){
+				ContactsActivity.PhonesToSMS=Call03Activity.gsonCompact.fromJson(PhonesInConfig, PhonesListType);
 			}
 			else{
-				ContactsCL.PhonesToSMS=new ArrayList<ContactRec>();
+				ContactsActivity.PhonesToSMS=new ArrayList<ContactRec>();
 			}
 
-			Log.d(TAG,"PhonesToSMS="+ContactsCL.PhonesToSMS);        
+			Log.d(TAG,"PhonesToSMS="+ ContactsActivity.PhonesToSMS);
 
 
 			//setContentView(R.layout.contacts);
 			contactsToCall=new EfficientAdapter(v.getContext());
-			ContactsCL.PhonesToSMSListView.setAdapter(contactsToCall);
+			ContactsActivity.PhonesToSMSListView.setAdapter(contactsToCall);
 
-			ContactsCL.PhonesToSMSListView.setOnItemLongClickListener(RemovePhoneFromSMS);  
-			ContactsCL.PhonesToSMSListView.setOnItemClickListener(AddPhoneToSMS);
+			ContactsActivity.PhonesToSMSListView.setOnItemLongClickListener(RemovePhoneFromSMS);
+			ContactsActivity.PhonesToSMSListView.setOnItemClickListener(AddPhoneToSMS);
 
-			return ContactsCL.v;
+			return ContactsActivity.v;
 		}	
 
 
@@ -123,9 +123,9 @@ public class ContactsCL extends FragmentActivity  {
 
 		public OnItemLongClickListener RemovePhoneFromSMS = new OnItemLongClickListener() {
 			public boolean onItemLongClick(AdapterView parentView, View childView, int position, long id) {
-				ContactsCL.PhonesToSMS.remove(ContactsCL.PhonesToSMSListView.getItemAtPosition(position));
+				ContactsActivity.PhonesToSMS.remove(ContactsActivity.PhonesToSMSListView.getItemAtPosition(position));
 				contactsToCall.notifyDataSetChanged();
-				//ContactsCL.PhonesToSMSListView.invalidateViews();
+				//ContactsActivity.PhonesToSMSListView.invalidateViews();
 				//Call03Activity.OnChanges();
 				SaveConfig();
 				return(true);
@@ -137,12 +137,12 @@ public class ContactsCL extends FragmentActivity  {
 			ProgressLayout.setVisibility(View.VISIBLE);
 
 			Intent intGetContact = new Intent(Intent.ACTION_PICK,Contacts.CONTENT_URI);
-			startActivityForResult(intGetContact, ContactsCL.REQCODE_GETCONTACT); 		
+			startActivityForResult(intGetContact, ContactsActivity.REQCODE_GETCONTACT);
 		}
 
 		@Override
 		public void onActivityResult(int requestCode, int resultCode, Intent data) {
-			if (requestCode==ContactsCL.REQCODE_GETCONTACT){
+			if (requestCode== ContactsActivity.REQCODE_GETCONTACT){
 				ContactsLayout.setVisibility(View.VISIBLE);
 				ProgressLayout.setVisibility(View.GONE);
 				if (data != null) {
