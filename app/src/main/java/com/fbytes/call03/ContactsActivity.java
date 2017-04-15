@@ -17,6 +17,7 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.PhoneLookup;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -28,6 +29,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -42,7 +44,7 @@ public class ContactsActivity extends FragmentActivity  {
 
 	private static String TAG="ContactsActivity";
 	private static ListView PhonesToSMSListView;
-	private static TextView UnderlayingView;
+	private static FloatingActionButton addContactButton;
 	private static LinearLayout ContactsLayout;
 	private static LinearLayout ProgressLayout;
 	//private static ProgressBar ProgressCircle;
@@ -79,6 +81,7 @@ public class ContactsActivity extends FragmentActivity  {
 			ProgressLayout = (LinearLayout) ContactsActivity.v.findViewById(R.id.progressLayout);
 
 
+/*
 			ContactsActivity.UnderlayingView=(TextView) ContactsActivity.v.findViewById(R.id.textUnderContacts);
 			ContactsActivity.UnderlayingView.setOnClickListener(new OnClickListener(){
 				@Override
@@ -87,6 +90,17 @@ public class ContactsActivity extends FragmentActivity  {
 				}
 
 			});
+*/
+
+			ContactsActivity.addContactButton=(FloatingActionButton) ContactsActivity.v.findViewById(R.id.addContact);
+			ContactsActivity.addContactButton.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View v) {
+					GetNewContact();
+				}
+
+			});
+
 
 
 			PhonesInConfig=Call03Activity.config.getString("PhoneToSMS","");

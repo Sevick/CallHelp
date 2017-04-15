@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ContactsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +15,20 @@
     android:layout_height="match_parent">
 
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_add"
+        app:elevation="4dp"
+        app:pressedTranslationZ="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        />
+
+<!--
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +38,7 @@
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
         android:gravity="center"/>
+-->
 
     <LinearLayout
         android:id="@+id/progressLayout"
@@ -66,6 +82,10 @@
                 android:scrollbarTrackVertical="@drawable/scrollbar_vertical_track" />
 
         </LinearLayout>
+
+
+
+
     </LinearLayout>
 </RelativeLayout>
 </LinearLayout>

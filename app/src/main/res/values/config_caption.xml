@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="ConfigCaption" parent="@android:style/TextAppearance.Medium">
+    <style name="ConfigCaption">
         <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16dp</item>
 	</style>
 	
     
     <style name="TranspBack" parent="@android:style/Theme.Translucent">
         <item name="android:background">#88000000</item>
+
 	</style>
   
 </resources>    

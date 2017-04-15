@@ -42,6 +42,9 @@
     <string name="TTSForExample">For example:</string>
     <string name="TTSToDownload">SVOX</string>
 
+    <string name="USRMSG_ContactHasNoEmail">This contact has no email.</string>
+    <string name="USRMSG_ContactHasNoPhone">This contact has no phone number.</string>
+
     <string name="GPSTab_DownloadAGPSCheckbox_Caption">Use AGPS</string>
     <string name="GPSTab_TxtMinAccur">Minimal accuracy toget location</string>
     <string name="GPSTab_TxtTimeOut">TimeOut</string>
@@ -56,19 +59,21 @@
     <string name="VoiceCallItem_File">Audio-file </string>
 
     <string-array name="Location_Accuracy">
-        <item>3 метров</item>
-        <item>10 метров</item>
-        <item>30 метров (default)</item>
-        <item>50 метров</item>
-        <item>100 метров</item>
+        <item>@string/Location_AccuracyItem_3</item>
+        <item>@string/Location_AccuracyItem_10</item>
+        <item>@string/Location_AccuracyItem_30</item>
+        <item>@string/Location_AccuracyItem_50</item>
+        <item>@string/Location_AccuracyItem_100</item>
     </string-array>
 
-    <string-array name="LocAccTimeouts">
-        <item>30 sec</item>
-        <item>1 min</item>
-        <item>2 min</item>
-        <item>5 min</item>
-    </string-array>
+    <string name="Location_AccuracyItem_3">3 meter</string>
+    <string name="Location_AccuracyItem_10">10 meter</string>
+    <string name="Location_AccuracyItem_30">30 meter(реккоменд.)</string>
+    <string name="Location_AccuracyItem_50">50 meter</string>
+    <string name="Location_AccuracyItem_100">100 meter</string>
+
+
+
 
     <string-array name="TestArray">
         <item>идет определение местоположения</item>

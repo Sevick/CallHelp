@@ -1,5 +1,6 @@
 package com.fbytes.call03;
 
+import android.app.ActionBar;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,7 @@ public class Call03Activity extends FragmentActivity{
 	public static SharedPreferences config;
 	public static SharedPreferences.Editor configEditor;
 	public static Gson gsonCompact;
+	ActionBar actionBar;
 	ViewPager mViewPager;
 	TabsAdapter mTabsAdapter;
 	private static boolean HasChanges=false;
@@ -40,27 +43,27 @@ public class Call03Activity extends FragmentActivity{
 		HasChanges=true;
 		SaveConfigButton.setEnabled(true);
 	}
-	
+
 	public void SaveConfig(){
-		
+
 		//Intent intent=new Intent();
 		//intent.setAction("com.fbytes.call03.SaveConfig");
 		//sendBroadcast(intent);
-		
-		ContactsCL.SaveConfig();
+
+		ContactsActivity.SaveConfig();
 		SMS.SaveConfig();
 
 		GPS.SaveConfig();
 		configEditor.commit();
-		
+
 		HasChanges=false;
-		SaveConfigButton.setEnabled(false);		
+		SaveConfigButton.setEnabled(false);
 	}
 
 	public void CancelConfig(){
 		Call03Activity.this.finish();
 	}
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -68,7 +71,7 @@ public class Call03Activity extends FragmentActivity{
 
 
 		config = getSharedPreferences(CONFIG_NAME, 0);
-		configEditor = config.edit();  
+		configEditor = config.edit();
 		gsonCompact = new Gson();
 
 		SaveConfigButton=(Button)findViewById(R.id.btnSaveConfig);
@@ -76,31 +79,46 @@ public class Call03Activity extends FragmentActivity{
 			@Override
 			public void onClick(View arg0) {
 				SaveConfig();
-			}			
+			}
 		});
 		CancelConfigButton=(Button)findViewById(R.id.btnConfigCancel);
 		CancelConfigButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {
 				CancelConfig();
-			}			
+			}
 		});
-		
+
 		final TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 		tabHost.setup();
+
+
+/*		actionBar = getActionBar();
+
+		TabsPagerAdapter mAdapter;
+		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());*/
+
 
 		mViewPager = (ViewPager)findViewById(R.id.pager);
 
 		mTabsAdapter = new TabsAdapter(this, tabHost, mViewPager);
 
+		TabHost.TabSpec tabSpec=tabHost.newTabSpec("tab1");
+		tabSpec.setIndicator(getResources().getString(R.string.Tabs_Contacts), ResourcesCompat.getDrawable(getResources(), R.drawable.tab_constact, null));
+        mTabsAdapter.addTab(tabSpec,ContactsActivity.ContactsFragment.class, null);
+
+/*
 		mTabsAdapter.addTab(tabHost.newTabSpec("tab1").setIndicator(getResources().getString(R.string.Tabs_Contacts),getResources().getDrawable(R.drawable.ic_group)),
-				ContactsCL.ContactsFragment.class, null);
-		
+				ContactsActivity.ContactsFragment.class, null);
+*/
+
 		mTabsAdapter.addTab(tabHost.newTabSpec("tab2").setIndicator(getResources().getString(R.string.Tabs_Message),getResources().getDrawable(R.drawable.ic_message)),
 				SMS.SMSFragment.class, null);
-		
+
 		mTabsAdapter.addTab(tabHost.newTabSpec("tab3").setIndicator(getResources().getString(R.string.Tabs_Settings),getResources().getDrawable(R.drawable.ic_settings)),
 				GPS.GPSFragment.class, null);
+
+
 
 		AppWidgetManager appWidgetManager= AppWidgetManager.getInstance(getApplicationContext());
 		ComponentName thisWidget = new ComponentName(getApplicationContext(), Call03WidgetProvider.class);
@@ -117,10 +135,10 @@ public class Call03Activity extends FragmentActivity{
 			/*
         	TextToSpeech=EditTextToSpeech.getText().toString();
             configEditor.putString("TextToSpeech", TextToSpeech);
-            configEditor.commit();   
+            configEditor.commit();
             setResult(RESULT_OK);
             finish();
-			 */            
+			 */
 		}
 	};
 
@@ -221,5 +239,5 @@ public class Call03Activity extends FragmentActivity{
 	}
 
 
-	
+
 }

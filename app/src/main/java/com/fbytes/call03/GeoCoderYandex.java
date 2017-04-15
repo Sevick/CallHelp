@@ -21,10 +21,7 @@ import android.location.Location;
 import android.os.Handler;
 import android.util.Log;
 
-import ru.yandex.yandexmapkit.*;
-import ru.yandex.yandexmapkit.map.MapEvent;
-import ru.yandex.yandexmapkit.utils.GeoPoint;
-import ru.yandex.yandexmapkit.utils.ScreenPoint;
+
 
 public class GeoCoderYandex extends AsyncGeoCoder {
 	private static String TAG="GeoCoderYandex";

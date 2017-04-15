@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_shape"
     android:orientation="vertical">
+
+    <!--    android:background="@drawable/main_shape"-->
 
     <TabHost
         android:id="@android:id/tabhost"
@@ -14,7 +15,6 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@drawable/main_shape"
             android:orientation="vertical">
 
             <TabWidget
@@ -34,7 +34,9 @@
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:elevation="4dp"
+                />
 
 
         </LinearLayout>
