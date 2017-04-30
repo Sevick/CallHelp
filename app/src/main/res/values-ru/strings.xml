@@ -66,10 +66,10 @@
     </string-array>
 
     <string name="Location_AccuracyItem_3">3 метра</string>
-    <string name="Location_AccuracyItem_10">10 метра</string>
-    <string name="Location_AccuracyItem_30">30 метра(реккоменд.)</string>
-    <string name="Location_AccuracyItem_50">50 метра</string>
-    <string name="Location_AccuracyItem_100">100 метра</string>
+    <string name="Location_AccuracyItem_10">10 метров</string>
+    <string name="Location_AccuracyItem_30">30 метров(реккоменд.)</string>
+    <string name="Location_AccuracyItem_50">50 метров</string>
+    <string name="Location_AccuracyItem_100">100 метров</string>
 
 
     <string-array name="LocAccTimeouts">
